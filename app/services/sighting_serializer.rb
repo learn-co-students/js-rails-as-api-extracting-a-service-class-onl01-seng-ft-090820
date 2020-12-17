@@ -2,9 +2,9 @@ class SightingSerializer
 
     def initialize(sighting_object)
         @sighting = sighting_object
-      end
+    end
 
-      def to_serialized_json
+    def to_serialized_json
         options = {
           include: {
             bird: {
@@ -17,5 +17,5 @@ class SightingSerializer
           except: [:updated_at],
         }
         @sighting.to_json(options)
-      end
+    end
 end
